@@ -2,6 +2,7 @@ using System.IO;
 using Improbable.Gdk.Core;
 using UnityEditor;
 using UnityEngine;
+using Improbable;
 
 namespace Fps
 {
@@ -21,7 +22,16 @@ namespace Fps
             var SimulatedPlayerCoordinatorTrigger = FpsEntityTemplates.SimulatedPlayerCoordinatorTrigger();
             snapshot.AddEntity(SimulatedPlayerCoordinatorTrigger);
 
+            AddHealthPacks(snapshot);
+
             SaveSnapshot(snapshot);
+        }
+
+
+        private static void AddHealthPacks(Snapshot snapshot)
+        {
+            var healthPack = FpsEntityTemplates.HealthPickup(new Vector3f(5, 0, 0), 100);
+            snapshot.AddEntity(healthPack);
         }
 
         private static void SaveSnapshot(Snapshot snapshot)

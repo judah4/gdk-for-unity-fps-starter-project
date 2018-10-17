@@ -91,5 +91,19 @@ namespace Fps
                 .AddPlayerLifecycleComponents(workerId, client, gameLogic)
                 .Build();
         }
+
+
+        public static EntityTemplate HealthPickup(Vector3f position, uint healthValue)
+        {
+            var gameLogic = WorkerUtils.UnityGameLogic;
+            var healthPickupComponent = Pickups.HealthPickup.Component.CreateSchemaComponentData(true, healthValue);
+            return EntityBuilder.Begin()
+                .AddPosition(position.X, position.Y, position.Z, gameLogic)
+                .AddMetadata("HealthPickup", gameLogic)
+                .SetPersistence(true)
+                .SetReadAcl(AllWorkerAttributes)
+                .AddComponent(healthPickupComponent, gameLogic)
+                .Build();
+        }
     }
 }
