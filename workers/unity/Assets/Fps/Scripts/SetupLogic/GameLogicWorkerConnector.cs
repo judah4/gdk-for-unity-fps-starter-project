@@ -1,3 +1,4 @@
+using Cookiedragon.Gdk.Stamina;
 using UnityEngine;
 using Improbable.Gdk.GameObjectCreation;
 using Improbable.Gdk.GameObjectRepresentation;
@@ -39,6 +40,10 @@ namespace Fps
             // Health
             world.GetOrCreateManager<ServerHealthModifierSystem>();
             world.GetOrCreateManager<HealthRegenSystem>();
+
+            //Stamina
+            world.GetOrCreateManager<ServerStaminaModifierSystem>();
+            world.GetOrCreateManager<StaminaRegenSystem>();
 
             base.HandleWorkerConnectionEstablished();
         }

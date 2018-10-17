@@ -96,7 +96,7 @@ namespace Improbable.Gdk.Guns
             shooting.SendShots(shotInfo);
 
             staminaRequester.SendModifyStaminaRequest(spatial.SpatialEntityId,
-                new StaminaModifier(0, 6, new IntAbsolute(0, 0, 0), new IntAbsolute(0, 0, 0)));
+                new StaminaModifier(0, -5, new IntAbsolute(0, 0, 0), new IntAbsolute(0, 0, 0)));
         }
     }
 }

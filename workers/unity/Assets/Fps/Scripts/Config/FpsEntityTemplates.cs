@@ -92,7 +92,7 @@ namespace Fps
                 .AddComponent(StaminaComponent.Component.CreateSchemaComponentData(100, 100), gameLogic)
                 .AddComponent(StaminaRegenComponent.Component.CreateSchemaComponentData(false, 0,
                     PlayerHealthSettings.SpatialCooldownSyncInterval,
-                    PlayerHealthSettings.RegenAfterDamageCooldown,
+                    0.5f,
                     PlayerHealthSettings.RegenInterval,
                     PlayerHealthSettings.RegenAmount), gameLogic)
                 .AddPlayerLifecycleComponents(workerId, client, gameLogic)

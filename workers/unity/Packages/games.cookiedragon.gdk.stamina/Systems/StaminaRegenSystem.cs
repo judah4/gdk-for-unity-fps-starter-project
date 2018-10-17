@@ -102,12 +102,6 @@ namespace Cookiedragon.Gdk.Stamina
 
                 var regenData = toRegen.RegenData[i];
 
-                // Don't regen if dead.
-                if (healthComponent.Stamina == 0)
-                {
-                    continue;
-                }
-
                 // If damaged recently, tick down the timer.
                 if (regenComponent.DamagedRecently)
                 {
