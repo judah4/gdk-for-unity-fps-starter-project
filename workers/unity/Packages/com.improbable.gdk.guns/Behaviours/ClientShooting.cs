@@ -9,6 +9,7 @@ namespace Improbable.Gdk.Guns
     public class ClientShooting : MonoBehaviour, IRequiresGun
     {
         [Require] private ShootingComponent.Requirable.Writer shooting;
+        [Require] private StaminaComponent.Requirable.Reader staminaReader;
         [Require] private StaminaComponent.Requirable.CommandRequestSender staminaRequester;
 
         [SerializeField] private LayerMask shootingLayerMask;
@@ -68,8 +69,18 @@ namespace Improbable.Gdk.Guns
             gunSettings = settings;
         }
 
+        public bool CanShoot()
+        {
+            return staminaReader.Data.Stamina > 0;
+        }
+
         public void FireShot(float range, Ray ray)
         {
+            if (CanShoot() == false)
+            {
+                return;
+            }
+
             var hitLocation = ray.origin + ray.direction * range;
             var hitSomething = false;
             var entityId = 0L;
@@ -96,7 +107,7 @@ namespace Improbable.Gdk.Guns
             shooting.SendShots(shotInfo);
 
             staminaRequester.SendModifyStaminaRequest(spatial.SpatialEntityId,
-                new StaminaModifier(0, -5, new IntAbsolute(0, 0, 0), new IntAbsolute(0, 0, 0)));
+                new StaminaModifier(0, -12, new IntAbsolute(0, 0, 0), new IntAbsolute(0, 0, 0)));
         }
     }
 }
