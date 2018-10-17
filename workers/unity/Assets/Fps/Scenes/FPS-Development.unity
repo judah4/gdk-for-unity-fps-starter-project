@@ -1261,79 +1261,29 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114477890548796456, guid: d52364553e6842940944c62b73e5e1b1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1721904475}
-    - target: {fileID: 114487692319857224, guid: d52364553e6842940944c62b73e5e1b1,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1721904475}
     - target: {fileID: 223526794525578030, guid: d52364553e6842940944c62b73e5e1b1,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1275767667}
+    - target: {fileID: 114487692319857224, guid: d52364553e6842940944c62b73e5e1b1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1721904475}
+    - target: {fileID: 114477890548796456, guid: d52364553e6842940944c62b73e5e1b1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1721904475}
     - target: {fileID: 114395280501851028, guid: d52364553e6842940944c62b73e5e1b1,
         type: 2}
       propertyPath: UICamera
       value: 
       objectReference: {fileID: 1275767664}
-    - target: {fileID: 114395280501851028, guid: d52364553e6842940944c62b73e5e1b1,
-        type: 2}
-      propertyPath: HealthBar
-      value: 
-      objectReference: {fileID: 1345553516}
-    - target: {fileID: 114395280501851028, guid: d52364553e6842940944c62b73e5e1b1,
-        type: 2}
-      propertyPath: RespawnScreen
-      value: 
-      objectReference: {fileID: 1345553515}
-    - target: {fileID: 114395280501851028, guid: d52364553e6842940944c62b73e5e1b1,
-        type: 2}
-      propertyPath: Reticle
-      value: 
-      objectReference: {fileID: 1345553514}
-    - target: {fileID: 114395280501851028, guid: d52364553e6842940944c62b73e5e1b1,
-        type: 2}
-      propertyPath: EscapeScreen
-      value: 
-      objectReference: {fileID: 1345553513}
-    - target: {fileID: 114395280501851028, guid: d52364553e6842940944c62b73e5e1b1,
-        type: 2}
-      propertyPath: ConnectScreen
-      value: 
-      objectReference: {fileID: 1345553517}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d52364553e6842940944c62b73e5e1b1, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1345553513 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1941139927291378, guid: d52364553e6842940944c62b73e5e1b1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1345553512}
---- !u!1 &1345553514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1359500622296546, guid: d52364553e6842940944c62b73e5e1b1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1345553512}
---- !u!1 &1345553515 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1954829380920856, guid: d52364553e6842940944c62b73e5e1b1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1345553512}
---- !u!1 &1345553516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1910795054517804, guid: d52364553e6842940944c62b73e5e1b1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1345553512}
---- !u!1 &1345553517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1172890799661992, guid: d52364553e6842940944c62b73e5e1b1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1345553512}
 --- !u!1 &1352389042
 GameObject:
   m_ObjectHideFlags: 0
