@@ -1,0 +1,28 @@
+package cookiedragon.gdk.stamina;
+
+import "from_gdk_packages/com.improbable.gdk.core/common.schema";
+import "from_gdk_packages/com.improbable.gdk.standardtypes/standardtypes.schema";
+
+type StaminaModifier {
+  uint32 type = 1;
+  float amount = 2;
+  improbable.gdk.standardtypes.IntAbsolute applied_location = 3;
+  improbable.gdk.standardtypes.IntAbsolute origin = 4;
+}
+
+type StaminaModifiedInfo {
+  StaminaModifier modifier = 1;
+  float stamina_before = 2;
+  float stamina_after = 3;
+}
+
+component StaminaComponent {
+  id = 4001;
+
+  float stamina = 1;
+  float max_stamina = 2;
+
+  command improbable.common.Empty modify_stamina(StaminaModifier);
+  event StaminaModifiedInfo stamina_modified;
+
+}

@@ -1,0 +1,11 @@
+{
+    "name": "games.cookiedragon.gdk.stamina",
+    "displayName": "SpatialOS GDK Stamina",
+    "version": "0.1.0",
+    "unity": "2018.2",
+    "author": "Cookie Dragon Games",
+    "description": "SpatialOS GDK Stamina Module. Stamina that regens over time used for actions like combat.",
+    "dependencies": {
+        "com.improbable.gdk.core": "0.1.0"
+    }
+}
