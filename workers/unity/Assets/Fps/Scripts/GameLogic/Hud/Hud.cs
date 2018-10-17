@@ -7,6 +7,7 @@ using Improbable.Gdk.Health;
 using Improbable.Gdk.StandardTypes;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using Cookiedragon.Gdk.Stamina;
 
 namespace Fps
 {
@@ -19,17 +20,20 @@ namespace Fps
         [SerializeField] private float hitEffectFocus = 16f;
 
         [Require] private HealthComponent.Requirable.Reader healthReader;
+        [Require] private StaminaComponent.Requirable.Reader staminaReader;
         [Require] private GunStateComponent.Requirable.Reader gunStateReader;
 
         private float currentFocus;
         private ScreenUIController screenUIController;
         private HealthBarController healthBarController;
+        private StaminaBarController staminaBarController;
         private LowHealthVignette damageVolumeSettings;
 
         private void Awake()
         {
             screenUIController = GameObject.Find("OnScreenUI").GetComponent<ScreenUIController>();
             healthBarController = screenUIController.GetComponentInChildren<HealthBarController>(true);
+            staminaBarController = screenUIController.GetComponentInChildren<StaminaBarController>(true);
 
             postProcessObject = GameObject.FindGameObjectWithTag("PostProcessing");
             if (postProcessObject != null)
@@ -44,6 +48,14 @@ namespace Fps
             healthReader.OnHealthModified += OnHealthModified;
             healthReader.OnRespawn += OnRespawn;
             gunStateReader.IsAimingUpdated += AimingUpdated;
+            staminaReader.OnStaminaModified += StaminaReader_OnStaminaModified
+                ; 
+        }
+
+        private void StaminaReader_OnStaminaModified(StaminaModifiedInfo update)
+        {
+            var currentHealth = staminaReader.Data.Stamina / staminaReader.Data.MaxStamina;
+            SetStaminaBar(currentHealth);
         }
 
         private void OnRespawn(Empty obj)
@@ -107,6 +119,14 @@ namespace Fps
             if (healthBarController != null && healthBarController.isActiveAndEnabled)
             {
                 healthBarController.SetHealthBar(healthFraction);
+            }
+        }
+
+        public void SetStaminaBar(float healthFraction)
+        {
+            if (staminaBarController != null && staminaBarController.isActiveAndEnabled)
+            {
+                staminaBarController.SetHealthBar(healthFraction);
             }
         }
 

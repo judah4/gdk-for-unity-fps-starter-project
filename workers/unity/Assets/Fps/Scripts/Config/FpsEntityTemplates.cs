@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cookiedragon.Gdk.Stamina;
 using Improbable;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.Guns;
@@ -88,6 +89,12 @@ namespace Fps
                 .AddComponent(gunStateComponent, client)
                 .AddComponent(healthComponent, gameLogic)
                 .AddComponent(healthRegenComponent, gameLogic)
+                .AddComponent(StaminaComponent.Component.CreateSchemaComponentData(100, 100), gameLogic)
+                .AddComponent(StaminaRegenComponent.Component.CreateSchemaComponentData(false, 0,
+                    PlayerHealthSettings.SpatialCooldownSyncInterval,
+                    PlayerHealthSettings.RegenAfterDamageCooldown,
+                    PlayerHealthSettings.RegenInterval,
+                    PlayerHealthSettings.RegenAmount), gameLogic)
                 .AddPlayerLifecycleComponents(workerId, client, gameLogic)
                 .Build();
         }

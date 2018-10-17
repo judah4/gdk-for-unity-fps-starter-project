@@ -1,4 +1,6 @@
+using Cookiedragon.Gdk.Stamina;
 using Improbable.Gdk.GameObjectRepresentation;
+using Improbable.Gdk.Standardtypes;
 using Improbable.Gdk.StandardTypes;
 using UnityEngine;
 
@@ -7,6 +9,7 @@ namespace Improbable.Gdk.Guns
     public class ClientShooting : MonoBehaviour, IRequiresGun
     {
         [Require] private ShootingComponent.Requirable.Writer shooting;
+        [Require] private StaminaComponent.Requirable.CommandRequestSender staminaRequester;
 
         [SerializeField] private LayerMask shootingLayerMask;
 
@@ -91,6 +94,9 @@ namespace Improbable.Gdk.Guns
             };
 
             shooting.SendShots(shotInfo);
+
+            staminaRequester.SendModifyStaminaRequest(spatial.SpatialEntityId,
+                new StaminaModifier(0, 6, new IntAbsolute(0, 0, 0), new IntAbsolute(0, 0, 0)));
         }
     }
 }

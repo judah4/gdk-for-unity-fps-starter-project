@@ -1,3 +1,4 @@
+using Cookiedragon.Gdk.Stamina;
 using Improbable.Gdk.Core;
 using Improbable.Gdk.Health;
 using Unity.Collections;
@@ -47,6 +48,7 @@ namespace Improbable.Gdk.Guns
                             AppliedLocation = shotInfo.HitLocation
                         });
                     commandSender.RequestsToSend.Add(modifyHealthRequest);
+
                     commandSent = true;
                 }
 
